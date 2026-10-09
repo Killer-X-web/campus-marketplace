@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusMarket | Student Marketplace</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <i class="fa-solid fa-store"></i>
+            <span>Campus<span>Market</span></span>
+        </div>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for products..."
+            >
+        </div>
+
+        <div class="header-actions">
+
+            <button class="icon-btn" id="themeBtn" title="Toggle theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button class="icon-btn" id="favoritesBtn" title="Favorites">
+                <i class="fa-solid fa-heart"></i>
+                <span class="notification" id="favoriteCount">0</span>
+            </button>
+
+            <button class="sell-btn" id="openSellBtn">
+                <i class="fa-solid fa-plus"></i>
+                Sell Item
+            </button>
+
+            <span id="userNameDisplay"></span>
+            <button id="logoutBtn" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+              Logout
+            </button>
+            <button id="adminBtn" class="icon-btn" title="Admin">
+            <i class="fa-solid fa-shield-halved"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">
+                    STUDENT MARKETPLACE
+                </span>
+
+                <h1>
+                    Buy. Sell.<br>
+                    <span>Connect.</span>
+                </h1>
+
+                <p>
+                    Buy and sell products, books, electronics,
+                    fashion and services within your campus community.
+                </p>
+
+                <button class="hero-btn" id="heroSellBtn">
+                    Start Selling
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+            <div class="hero-graphic">
+
+                <div class="floating-card card-one">
+                    <i class="fa-solid fa-laptop"></i>
+                    <div>
+                        <strong>Laptops</strong>
+                        <small>Find great deals</small>
+                    </div>
+                </div>
+
+                <div class="floating-card card-two">
+                    <i class="fa-solid fa-book"></i>
+                    <div>
+                        <strong>Textbooks</strong>
+                        <small>Buy & sell books</small>
+                    </div>
+                </div>
+
+                <div class="hero-circle">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+                <div>
+                    <span id="totalListings">0</span>
+                    <p>Total Listings</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <div>
+                    <span id="electronicsCount">0</span>
+                    <p>Electronics</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+                <div>
+                    <span id="booksCount">0</span>
+                    <p>Books</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-tags"></i>
+                </div>
+                <div>
+                    <span id="availableCount">0</span>
+                    <p>Available</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORY ================= -->
+
+        <section class="category-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="small-title">EXPLORE</span>
+                    <h2>Shop by Category</h2>
+                </div>
+            </div>
+
+            <div class="categories">
+
+                <button class="category active" data-category="All">
+                    <i class="fa-solid fa-border-all"></i>
+                    <span>All</span>
+                </button>
+
+                <button class="category" data-category="Electronics">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>Electronics</span>
+                </button>
+
+                <button class="category" data-category="Books">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Books</span>
+                </button>
+
+                <button class="category" data-category="Fashion">
+                    <i class="fa-solid fa-shirt"></i>
+                    <span>Fashion</span>
+                </button>
+
+                <button class="category" data-category="Furniture">
+                    <i class="fa-solid fa-couch"></i>
+                    <span>Furniture</span>
+                </button>
+
+                <button class="category" data-category="Services">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span>Services</span>
+                </button>
+
+                <button class="category" data-category="Others">
+                    <i class="fa-solid fa-ellipsis"></i>
+                    <span>Others</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MARKETPLACE ================= -->
+
+        <section class="market-section">
+
+            <div class="market-heading">
+
+                <div>
+                    <span class="small-title">MARKETPLACE</span>
+                    <h2>Latest Listings</h2>
+                </div>
+
+                <div class="sort-area">
+
+                    <label for="sortSelect">
+                        Sort:
+                    </label>
+
+                    <select id="sortSelect">
+                        <option value="newest">Newest</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div id="listingGrid" class="listing-grid"></div>
+
+
+            <div id="emptyState" class="empty-state">
+
+                <i class="fa-solid fa-box-open"></i>
+
+                <h3>No listings found</h3>
+
+                <p>
+                    Try another search or category.
+                </p>
+
+                <button id="emptySellBtn">
+                    Sell an Item
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= SELL MODAL ================= -->
+
+    <div class="modal-overlay" id="sellModal">
+
+        <div class="modal">
+
+            <button class="close-btn" id="closeSellModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header">
+
+                <span class="small-title">CREATE LISTING</span>
+
+                <h2>Sell an Item</h2>
+
+                <p>
+                    Add your product to the campus marketplace.
+                </p>
+
+            </div>
+
+
+            <form id="listingForm">
+
+                <div class="form-group">
+
+                    <label>Item Name</label>
+
+                    <input
+                        type="text"
+                        id="itemName"
+                        placeholder="e.g. iPhone 12"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Category</label>
+
+                        <select id="itemCategory" required>
+
+                            <option value="">Select category</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Books">Books</option>
+                            <option value="Fashion">Fashion</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Services">Services</option>
+                            <option value="Others">Others</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Price (₦)</label>
+
+                        <input
+                            type="number"
+                            id="itemPrice"
+                            placeholder="350000"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Condition</label>
+
+                        <select id="itemCondition" required>
+
+                            <option value="">Select condition</option>
+                            <option value="New">New</option>
+                            <option value="Like New">Like New</option>
+                            <option value="Used - Good">Used - Good</option>
+                            <option value="Used">Used</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Location</label>
+
+                        <input
+                            type="text"
+                            id="itemLocation"
+                            placeholder="e.g. Ojo Campus"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Description</label>
+
+                    <textarea
+                        id="itemDescription"
+                        rows="4"
+                        placeholder="Describe your item..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Your Name</label>
+
+                        <input
+                            type="text"
+                            id="sellerName"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="sellerPhone"
+                            placeholder="08012345678"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Product Image</label>
+
+                    <div class="upload-box">
+
+                        <input
+                            type="file"
+                            id="itemImage"
+                            accept="image/*"
+                        >
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <p>
+                            Click to upload an image
+                        </p>
+
+                        <small>
+                            JPG, PNG or WEBP
+                        </small>
+
+                    </div>
+
+                    <img
+                        id="imagePreview"
+                        class="image-preview"
+                        alt="Preview"
+                    >
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Publish Listing
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PRODUCT DETAILS MODAL ================= -->
+
+    <div class="modal-overlay" id="detailsModal">
+
+        <div class="details-modal">
+
+            <button class="close-btn" id="closeDetailsModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="detailsContent"></div>
+
+        </div>
+
+    </div>
+
+    <!-- CHAT MODAL -->
+<div class="modal-overlay" id="chatModal">
+
+    <div class="modal chat-modal">
+
+        <button class="close-btn" id="closeChat">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="chat-header">
+            <span class="small-title">CAMPUS HUB CHAT</span>
+            <h2 id="chatSellerName">Seller</h2>
+            <p id="chatItemName">Product</p>
+        </div>
+
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <form id="chatForm" class="chat-input-area">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Type a message..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+    <!-- AUTH SCREEN -->
+<div id="authScreen" class="auth-screen">
+
+    <!-- LOGIN -->
+    <div class="auth-box" id="loginBox">
+        <div class="auth-logo">Campus<span>Market</span></div>
+
+        <h2>Welcome Back</h2>
+        <p>Login to continue shopping on CampusMarket.</p>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="auth-btn">Login</button>
+        </form>
+
+        <p class="auth-switch">
+            Don't have an account?
+            <button type="button" id="showSignup">Sign Up</button>
+        </p>
+    </div>
+
+
+    <!-- SIGN UP -->
+    <div class="auth-box hidden" id="signupBox">
+        <div class="auth-logo">Campus<span>Market</span></div>
+
+        <h2>Create Account</h2>
+        <p>Join your campus marketplace.</p>
+
+        <form id="signupForm">
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="signupName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="signupEmail" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="signupPassword" placeholder="Create a password" required>
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+
+            <button type="submit" class="auth-btn">Create Account</button>
+        </form>
+
+        <p class="auth-switch">
+            Already have an account?
+            <button type="button" id="showLogin">Login</button>
+        </p>
+    </div>
+
+</div>
+
+
+    <!-- ================= FAVORITES MODAL ================= -->
+
+    <div class="modal-overlay" id="favoritesModal">
+
+        <div class="modal">
+
+            <button class="close-btn" id="closeFavoritesModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header">
+
+                <span class="small-title">
+                    SAVED ITEMS
+                </span>
+
+                <h2>My Favorites</h2>
+
+            </div>
+
+            <div id="favoritesContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div id="toast" class="toast">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Success
+        </span>
+
+    </div>
+    <!-- ADMIN MODAL -->
+
+<div class="modal-overlay" id="adminModal">
+
+    <div class="modal">
+
+        <button class="close-btn" id="closeAdmin">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-header">
+
+            <span class="small-title">ADMIN</span>
+
+            <h2>Reported Listings</h2>
+
+            <p>Review reports submitted by users.</p>
+
+        </div>
+
+        <div id="reportsContent"></div>
+
+    </div>
+
+</div>
+
+
+    <script src="index.js" defer></script>
+
+</body>
+</html>
